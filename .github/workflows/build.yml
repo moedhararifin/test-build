@@ -1,0 +1,27 @@
+name: Build Dollhouse Windows
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 11 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Build Dollhouse.exe
+        run: .\build.cmd
+
+      - name: Upload Dollhouse.exe artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Dollhouse-win-x64
+          path: dist/Dollhouse.exe
+          if-no-files-found: error

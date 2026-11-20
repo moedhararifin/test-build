@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>dhloaderfixture</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NativeLib>Shared</NativeLib>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <CETCompat>false</CETCompat>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Dollhouse.Core/Dollhouse.Core.csproj" GlobalPropertiesToRemove="PublishAot" />
+    <Compile Include="../../src/Dollhouse.Runtime/Memory/WindowsMemory.cs" Link="WindowsMemory.cs" />
+  </ItemGroup>
+</Project>

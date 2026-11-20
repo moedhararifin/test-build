@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Dollhouse</AssemblyName>
+    <RootNamespace>Dollhouse.App</RootNamespace>
+    <CETCompat>false</CETCompat>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../../artifacts/runtime/dhruntime.dll" LogicalName="Dollhouse.Runtime"
+                      Condition="Exists('../../artifacts/runtime/dhruntime.dll')" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <EmbeddedResource Include="../../THIRD-PARTY-NOTICES.txt" LogicalName="Dollhouse.ThirdPartyNotices" />
+    <ProjectReference Include="../Dollhouse.Server/Dollhouse.Server.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources/pakkey.txt" LogicalName="Dollhouse.Content.PakKey" />
+  </ItemGroup>
+  <Target Name="RequireNativeLibrariesForPublish" BeforeTargets="PrepareForPublish">
+    <Error Condition="!Exists('$(MSBuildProjectDirectory)/../../artifacts/runtime/dhruntime.dll')"
+           Text="Build the native runtime first: run build.cmd (requires Native AOT build tools)." />
+  </Target>
+</Project>

@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Dollhouse.App/Dollhouse.App.csproj" />
+    <Project Path="src/Dollhouse.Core/Dollhouse.Core.csproj" />
+    <Project Path="src/Dollhouse.DeviceCrypto/Dollhouse.DeviceCrypto.csproj" />
+    <Project Path="src/Dollhouse.Gameplay/Dollhouse.Gameplay.csproj" />
+    <Project Path="src/Dollhouse.Runtime/Dollhouse.Runtime.csproj" />
+    <Project Path="src/Dollhouse.Server/Dollhouse.Server.csproj" />
+    <Project Path="src/Dollhouse.Tools/Dollhouse.Tools.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Dollhouse.LoaderFixture/Dollhouse.LoaderFixture.csproj" />
+    <Project Path="tests/Dollhouse.Tests/Dollhouse.Tests.csproj" />
+  </Folder>
+</Solution>

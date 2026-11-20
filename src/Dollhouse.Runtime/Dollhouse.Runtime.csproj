@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>dhruntime</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NativeLib>Shared</NativeLib>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <CETCompat>false</CETCompat>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Dollhouse.Core/Dollhouse.Core.csproj" GlobalPropertiesToRemove="PublishAot" />
+    <Compile Include="../Dollhouse.Gameplay/**/*.cs" Exclude="../Dollhouse.Gameplay/obj/**;../Dollhouse.Gameplay/bin/**" LinkBase="Gameplay" />
+    <Compile Include="../Dollhouse.DeviceCrypto/*.cs" LinkBase="Crypto" />
+  </ItemGroup>
+</Project>

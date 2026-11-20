@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="../../src/Dollhouse.Core/Dollhouse.Core.csproj" />
+    <ProjectReference Include="../../src/Dollhouse.Gameplay/Dollhouse.Gameplay.csproj" />
+    <ProjectReference Include="../../src/Dollhouse.DeviceCrypto/Dollhouse.DeviceCrypto.csproj" />
+    <ProjectReference Include="../../src/Dollhouse.Runtime/Dollhouse.Runtime.csproj" Aliases="runtime" />
+    <ProjectReference Include="../../src/Dollhouse.Server/Dollhouse.Server.csproj" />
+    <ProjectReference Include="../../src/Dollhouse.App/Dollhouse.App.csproj" />
+  </ItemGroup>
+</Project>

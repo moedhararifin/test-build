@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);DOLLHOUSE_PATCH_BINDINGS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Dollhouse.Gameplay/Shared/SupportedBuild.cs" Link="Patching/Gameplay/Shared/SupportedBuild.cs" />
+    <Compile Include="../Dollhouse.Gameplay/Shared/GameplayLibrary.cs" Link="Patching/Gameplay/Shared/GameplayLibrary.cs" />
+    <Compile Include="../Dollhouse.Gameplay/Settings/SettingsBindings.cs" Link="Patching/Gameplay/Settings/SettingsBindings.cs" />
+    <Compile Include="../Dollhouse.Gameplay/Camera/CameraBindings.cs" Link="Patching/Gameplay/Camera/CameraBindings.cs" />
+    <Compile Include="../Dollhouse.Gameplay/CardFiltering/CardFilteringBindings.cs" Link="Patching/Gameplay/CardFiltering/CardFilteringBindings.cs" />
+    <EmbeddedResource Include="Resources/Engine.ini" LogicalName="Dollhouse.Game.Engine.ini" />
+    <EmbeddedResource Include="Resources/CamConf.config" LogicalName="Dollhouse.Camera.CamConf" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />
+    <PackageReference Include="Iced" Version="1.22.0" />
+  </ItemGroup>
+</Project>

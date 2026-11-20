@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Dollhouse.Core/Dollhouse.Core.csproj" />
+    <ProjectReference Include="../Dollhouse.App/Dollhouse.App.csproj" />
+  </ItemGroup>
+</Project>
