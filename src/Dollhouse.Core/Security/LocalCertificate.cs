@@ -70,10 +70,9 @@ public static class LocalCertificate
     private static RSACryptoServiceProvider CreateCryptoApiKey() => new(2048,
         new CspParameters(24) // PROV_RSA_AES supports RSA-2048 with SHA-256.
         {
-            KeyContainerName = "Dollhouse-TLS-" + Guid.NewGuid().ToString("N"),
             KeyNumber = (int)KeyNumber.Exchange,
-            Flags = CspProviderFlags.NoPrompt
-        }) { PersistKeyInCsp = false };
+            Flags = CspProviderFlags.CreateEphemeralKey | CspProviderFlags.NoPrompt
+        });
 
     [SupportedOSPlatform("windows")]
     private static X509Certificate2 LoadCryptoApiCertificate(WorkspacePaths paths, Action<string>? details)
